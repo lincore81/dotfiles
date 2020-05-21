@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wall=~/.config/wall
+
+[ -z $1 ] && echo "Missing argument" && exit 1
+rm "$wall" 
+ln -s "$1" "$wall" && feh --bg-scale "$wall" && wal -i "$wall"
+

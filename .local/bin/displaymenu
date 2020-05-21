@@ -1,0 +1,7 @@
+#!/bin/sh
+
+profiles=`ls -1 ~/.config/autorandr`
+selection=`echo "${profiles}" | dmenu -p "Select a display profile: "`
+profileselected=`echo "${selection}" | grep "${profiles}"`
+
+[ -z "$profileselected" ] || autorandr -l "${profileselected}"

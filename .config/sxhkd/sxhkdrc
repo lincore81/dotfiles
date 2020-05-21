@@ -1,0 +1,69 @@
+super + Return
+    $TERMINAL
+super + Tab
+    $BROWSER
+
+# Menus:
+super + d
+    dmenu_recency
+super + ctrl + b
+    $TERMINAL -e "bmenu"
+super + M
+    morc_menu
+super + 0
+    exitmenu
+
+super + F1
+    togglelayout
+super + F2
+    displaymenu
+
+super + z
+    $TERMINAL -e "zzz"
+
+# Various degrees of murder:
+super + q
+    wmctrl -ic `xdotool getwindowfocus`
+super + shift + q
+    xkill -id `xdotool getwindowfocus`
+super + x
+    xkill
+
+# Take screenshots:
+Print
+    scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
+super + Print
+    scrot -u '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
+
+# Audio 
+XF86AudioRaiseVolume
+    volume +
+super + XF86AudioRaiseVolume
+    volume ++
+XF86AudioLowerVolume
+    volume -
+super + XF86AudioLowerVolume
+    volume --
+XF86AudioMute
+    volume m
+
+# XF86AudioPlay 
+#     playerctl play
+# XF86AudioPause 
+#     playerctl pause
+# XF86AudioNext 
+#     playerctl next
+# XF86AudioPrev 
+#     playerctl previous
+
+# Brightness
+XF86MonBrightnessUp 
+    xbacklight -inc 20
+XF86MonBrightnessDown 
+    xbacklight -dec 20
+
+# Touchpad controls
+#XF86TouchpadToggle 
+#    /some/path/toggletouchpad.sh # toggle touchpad
+
+

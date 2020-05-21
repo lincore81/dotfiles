@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cmode=`optimus-manager --print-mode | grep -o "intel\|nvidia"`
+nmode="nvidia"
+if [ "$cmode" = "nvidia" ]; then 
+    nmode="intel"
+fi
+
+optimus-manager --switch $nmode --no-confirm

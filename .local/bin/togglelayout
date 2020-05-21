@@ -1,0 +1,7 @@
+#!/bin/sh
+
+curlang=`setxkbmap -query | grep layout | awk '{print $2}'`
+newlang=`[ "${curlang}" = "us" ] && echo "de" || echo "us"`
+
+notify-send "Keyboard layout: $newlang <- $curlang"
+setxkbmap "${newlang}"
